@@ -23,6 +23,10 @@ export class BookDetailComponent implements OnInit {
     this.bookService.getBook(id).subscribe((book) => (this.book = book));
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   ngOnInit(): void {
     this.getBook();
   }

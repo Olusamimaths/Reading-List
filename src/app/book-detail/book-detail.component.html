@@ -6,3 +6,7 @@
     <p class="book__notes" *ngIf="book.notes">{{book.notes}}</p>
     <img src="book.cover_image" *ngIf="book.cover_image" class="book__cover-image" />
 </div>
+
+<button class="back" (click)="goBack()">
+    Back to List
+</button>
