@@ -1,0 +1,8 @@
+<div *ngFor="let book of books" class="book">
+    <h3 class="book__title">{{book.title}}</h3>
+    <p class="book__author">{{book.author}}</p>
+    <p class="book__stars" *ngIf="book.stars">{{book.stars}}</p>
+    <p class="book__summary" *ngIf="book.summary">{{book.summary}}</p>
+    <p class="book__notes" *ngIf="book.notes">{{book.notes}}</p>
+    <img src="book.cover_image" *ngIf="book.cover_image" class="book__cover-image" />
+</div>
