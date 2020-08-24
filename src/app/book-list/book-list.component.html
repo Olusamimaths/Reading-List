@@ -2,5 +2,5 @@
     <h3 class="book-list__title">{{book.title}}</h3>
     <p class="book-list__author">{{book.author}}</p>
     <p class="book-list__stars" *ngIf="book.stars">{{book.stars}}</p>
-    <app-book-detail [book]="book"></app-book-detail>
+    <a class="book-list__view-details" routerLink="/detail/{{book.id}}">See Book Details</a>
 </div>
