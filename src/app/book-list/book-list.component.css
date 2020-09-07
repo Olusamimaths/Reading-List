@@ -1,0 +1,28 @@
+.books {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0efeb;
+  padding: 30px;
+}
+
+.books__add-new {
+  text-align: right;
+  border: 1px solid #cb997e;
+  padding: 5px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.book-list {
+  padding: 20px 0;
+}
+
+.book-list * {
+  margin-top: 10px;
+}
+
+.book-list__title {
+  color: #cb997e;
+  border-bottom: 1px solid #a5a58d;
+}
+

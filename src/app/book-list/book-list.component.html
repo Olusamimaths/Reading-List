@@ -1,7 +1,14 @@
-<h2>You can add a new book <a routerLink="add">here</a> </h2>
-<div *ngFor="let book of books" class="book-list">
-    <h3 class="book-list__title">{{book.title}}</h3>
-    <p class="book-list__author">{{book.author}}</p>
-    <p class="book-list__stars" *ngIf="book.stars">{{book.stars}}</p>
-    <a class="book-list__view-details" routerLink="/detail/{{book.id}}">See Book Details</a>
+<div class="books">
+    <div class="books__add-new"><a routerLink="add" target="_blank">Add new</a> </div>
+    <div *ngFor="let book of books" class="book-list">
+        <h1 class="book-list__title">{{book.title}}</h1>
+        <div class="cover-image-container">
+            <img src="https://via.placeholder.com/200x300" alt="">
+        </div>
+
+        <p class=" book-list__author">{{book.author}}</p>
+        <p *ngFor=""></p>
+        <p class="book-list__stars" *ngIf="book.stars">{{book.stars}}</p>
+        <a class="book-list__view-details" routerLink="/detail/{{book.id}}">See Book Details</a>
+    </div>
 </div>
