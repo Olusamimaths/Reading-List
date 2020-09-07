@@ -1,44 +1,51 @@
-<h1>Add a new book</h1>
-<form class="add-book" method="POST" enctype="multipart/form-data">
-    <div class="input-group">
-        <label for="title">
-            Title: <input #title name="title" id="book_title" placeholder="Book Title" />
-        </label>
-    </div>
-    <div class="input-group">
-        <label for="author">
-            Author: <input #author name="author" id="book_author" placeholder="Book Author" />
-        </label>
-    </div>
+<div class="add-book">
+    <h1 class="title">Add a new book</h1>
+    <form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
 
-    <div class="input-group">
-        <label for="stars">
-            Stars: <input #stars name="stars" id="book_stars" type="range" min="0" max="5" value="3" />
-        </label>
-    </div>
+        <div class="input-group">
+            <label for="title">
+                Title:
+            </label>
+            <input formControlName="title" name="title" id="book_title" placeholder="Book Title" />
+        </div>
+        <div class="input-group">
+            <label for="author">
+                Author:
+            </label>
+            <input formControlName="author" name="author" id="book_author" placeholder="Book Author" />
+        </div>
 
-    <div class="input-group">
-        <label for="summary">
-            Summary: <textarea #author name="summary" id="book_summary" placeholder="Book summary"></textarea>
-        </label>
-    </div>
+        <div class="input-group">
+            <label for="stars">
+                Stars:
+            </label>
+            <input formControlName="stars" name="stars" id="book_stars" type="number" min="0" max="5" />
+        </div>
 
-    <div class="input-group">
-        <label for="notes">
-            Notes: <textarea #author name="notes" id="book_notes" placeholder="Book notes"></textarea>
-        </label>
-    </div>
+        <div class="input-group">
+            <label for="summary">
+                Summary:
+            </label>
+            <textarea formControlName="summary" name="summary" id="book_summary" placeholder="Book summary"></textarea>
+        </div>
 
-    <div class="input-group">
-        <label for="cover-image">
-            Cover Image: <input type="file" #cover_image name="cover_image" id="cover-image" />
-        </label>
-    </div>
+        <div class="input-group">
+            <label for="notes">
+                Notes:
+            </label>
+            <textarea formControlName="notes" name="notes" id="book_notes" placeholder="Book notes"></textarea>
+        </div>
 
-    <div class="input-group">
-        <button class="add-button">Add Book</button>
-    </div>
+        <div class="input-group">
+            <label for="cover-image">
+                Cover:
+            </label>
+            <input type="file" formControlName="coverImage" name="cover_image" id="cover-image" />
+        </div>
 
+        <div class="input-group">
+            <button class="add-button" type="submit" [disabled]="!addBookForm.valid">Add Book</button>
+        </div>
 
-
-</form>
+    </form>
+</div>
