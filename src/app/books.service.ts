@@ -13,9 +13,14 @@ export class BooksService {
 
   readonly books$ = this._books.asObservable();
 
-  getBooks(): Observable<Book[]> {
+  get books(): Book[] {
     console.log('Get BOOKS');
-    return of(this._books.getValue());
+    return this._books.getValue();
+  }
+
+  set books(val: Book[]) {
+    console.log('Set book');
+    this._books.next(val);
   }
 
   getBook(id: number): Observable<Book> {
@@ -23,14 +28,10 @@ export class BooksService {
     return of(this._books.getValue().find((book) => book.id === id));
   }
 
-
-  addBook(book: Book): Observable<any> {
+  addBook(book: Book) {
     console.log('add book', book);
     const _books = this._books.getValue();
     const books = [..._books, { id: _books.length + 1, ...book }];
-    console.log(books);
-    this._books.next(books);
-
-    return of(this._books.getValue());
+    this.books = books;
   }
 }
