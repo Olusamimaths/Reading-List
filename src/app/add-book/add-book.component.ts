@@ -23,7 +23,7 @@ export class AddBookComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    const value = this.addBookForm.value;
+    const { value } = this.addBookForm;
     this.bookService.addBook(value).subscribe(() => BOOKS.push(value));
   }
 }
